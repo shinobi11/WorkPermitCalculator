@@ -1,0 +1,285 @@
+<html>
+    
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+  rel="stylesheet"  type='text/css'>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    
+<script src="VisaTierCalculator.js"></script>
+<link rel="stylesheet" href="VisaTierCalculator.css">
+    
+</head>
+    
+<body>
+
+
+<div class="container">
+
+    <h2>China Work Permit Point Scoring System</h2>
+    <div class="spacer"></div>
+    
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered">
+            
+            <tr>
+                <td width="50%"><strong>Criteria</strong></td>
+                <td width="40%"><strong>Input</strong></td>
+                <td><strong>Score</strong></td>
+            </tr>
+            
+            <tr class="header salary">
+                <td width="50%"><h5><i class="fa fa-money" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-container="body" data-content="This will likely be the annual salary stipulated in the employee’s contract, and will most probably not take into account factors such as bonuses" 
+                data-placement="top"></i> Annual salary paid by employer</h5></td>
+                <td width="40%" class="input_display"></td>
+                <td class="score_display">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td width="50%">Input yearly salary in RMB on the right</td>
+                <td width="40%"><input type="text" name="salary" data-container='body' data-toggle="popover" data-placement="bottom" data-trigger="manual" data-content="Please enter a positive whole number value for the salary."></td>
+                <td id="salary" class="calcscore">&nbsp;</td>
+            </tr>
+
+            <tr class="header education">
+                <td width="50%"><h5><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                Educational qualifications or vocational skills qualifications</h5></td>
+                <td width="40%" class="input_display"></td>
+                <td class="score_display">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td width="50%">Doctorate; highest possible international vocational qualification; technical expert or equivalent</td>
+                <td width="40%"><input type="radio" name="education" value="20"></td>
+                <td class="education">&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%"> Master's; technical expert or equivalent</td>
+                <td width="40%"><input type="radio" name="education" value="15"></td>
+                <td class="education">&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%">Bachelor's; high level worker or equivalent</td>
+                <td width="40%"><input type="radio" name="education" value="10"></td>
+                <td class="education">&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td>None</td>
+                <td width="40%"><input type="radio" name="education" value="0"></td>
+                <td class="education">&nbsp;</td>
+            </tr>
+
+            <tr class="header experience">
+                <td width="50%"><h5><i class="fa fa-tasks" aria-hidden="true"></i> Work experience relevant to field</h5></td>
+                <td width="40%" class="input_display"></td>
+                <td class="score_display">&nbsp;</td>
+            </tr>
+    
+            <tr>
+                <td width="50%">Input number of years on the right</td>
+                <td width="40%"><input type="text" name="experience" width="50" data-container='body' data-toggle="popover" data-placement="bottom" data-trigger="manual" data-content="Please enter a positive whole number value for your years of experience."></td>
+                <td id="experience" class="calcscore">&nbsp;</td>
+            </tr>
+
+            <tr class="header time_spent">
+                <td width="50%"><h5 ><i class="fa fa-clock-o" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-container="body" data-content="This will likely be the time stipulated in the employee’s contract, and will most probably not take into account factors such as overtime" 
+                data-placement="top"></i> Time to be spent working in China annually</h5></td>
+                <td width="40%" class="input_display"></td>
+                <td class="score_display">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td width="50%">Input number of months on the right</td>
+                <td width="40%"><input type="text" name="time_spent" data-container='body' data-toggle="popover" data-placement="bottom" data-trigger="manual" data-content="Please enter a number from 1-12."></td>
+                <td id="time_spent" class="calcscore">&nbsp;</td>
+            </tr>
+
+            <tr class="header age">
+                <td width="50%"><h5><i class="fa fa-birthday-cake" aria-hidden="true"></i> Age</h5></td>
+                <td width="40%" class="input_display"></td>
+                <td class="score_display">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td width="50%">Input your age in years on the right</td>
+                <td width="40%"><input type="text" name="age" data-container='body' data-toggle="popover" data-placement="bottom" data-trigger="manual" data-content="Please enter a positive whole number, 18 or above, value for your age."></td>
+                <td id="age" class="calcscore">&nbsp;</td>
+            </tr>
+
+            <tr class="header chinese_lvl">
+                <td width="50%"><h5><i class="fa fa-signal" aria-hidden="true"></i> Chinese Level</h5></td>
+                <td width="40%" class="input_display"></td>
+                <td class="score_display">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td width="50%">Former Chinese National</td>
+                <td width="40%"><input type="radio" value="5" name="chinese_level"></td>
+                <td class="chinese_level">&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%">Bachelor's degree or above, taught in Chinese</td>
+                <td width="40%"><input type="radio" value="5" name="chinese_level"></td>
+                <td class="chinese_level">&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%"><span class="HSK" data-toggle="popover">HSK level 5 or above</span></td>
+                <td width="40%"><input type="radio" value="5" name="chinese_level"></td>
+                <td class="chinese_level">&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%"><span class="HSK" data-toggle="popover">HSK level 4</span></td>
+                <td width="40%"><input type="radio" value="4" name="chinese_level"></td>
+                <td class="chinese_level">&nbsp;</td>
+            </tr>
+   
+            <tr>
+                <td width="50%"><span class="HSK" data-toggle="popover">HSK level 3</span></td>
+                <td width="40%"><input type="radio" value="3" name="chinese_level"></td>
+                <td class="chinese_level">&nbsp;</td>
+            </tr>
+   
+            <tr>
+                <td width="50%"><span class="HSK" data-toggle="popover">HSK level 2</span></td>
+                <td width="40%"><input type="radio" value="2" name="chinese_level"></td>
+                <td class="chinese_level">&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%"><span class="HSK" data-toggle="popover">HSK level 1</span></td>
+                <td width="40%"><input type="radio" value="1" name="chinese_level"></td>
+                <td class="chinese_level">&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%">Does not speak any mandarin</td>
+                <td width="40%"><input type="radio" value="0" name="chinese_level"></td>
+                <td class="chinese_level">&nbsp;</td>
+            </tr>
+
+            <tr class="header location">
+                <td width="50%"><h5><i class="fa fa-map-marker" aria-hidden="true"></i> Location of employment (in China)</h5></td>
+                <td width="40%" class="input_display"></td>
+                <td class="score_display">&nbsp;</td>
+            </tr>
+ 
+            <tr>
+                <td width="50%"><span class="popstay" data-container= 'body' data-toggle="popover" data-placement="top" data-trigger="manual" data-content="Though the government document does not define &quot;western regions&quot;, 
+	           this phrase commonly refers to: Chongqing municipality, Sichuan Province, Guizhou Province, Yunnan Province, 
+	           Tibet Autonomous Region, Shaanxi Province, Gansu Province, Qinghai Province, Ningxia Hui Autonomous Region, Xinjiang Uyghur Autonomous Region.">Western regions</span></td>
+                <td width="40%"><input type="radio" name="location" value="10"></td>
+                <td class="location">&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%">
+	               <span class="popstay" data-container='body' data-toggle="popover" data-placement="top" data-trigger="manual" data-content="The government document is also unclear about 
+	               'Old industrial areas in the Northeast region,' however other  <a href='http://www.gov.cn/zhengce/2016-04/26/content_5068242.htm'>central government publications</a>
+	               most commonly mention Shenyang, Dalian, Changchun and Harbin, alongside other traditional industrial areas within Liaoning, Jilin, Heilongjiang and Inner Mongolia.">Old industrial areas in the Northeast region</span></td>
+                <td width="40%"><input type="radio" name="location" value="10"></td>
+                <td class="location">&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%"><span class="popstay" data-container='body' data-toggle="popover" data-placement="top" data-trigger="manual" data-content="'Areas of interest' are also not defined in the government document.
+	           However, 'Impoverished counties' most probably refers to the official <a href='http://www.cpad.gov.cn/art/2012/3/19/art_50_23706.html'>list of key counties</a> for 
+	           the national poverty alleviation and development program">
+	           Areas of interest such as empoverished counties</span></td>
+                <td width="40%"><input type="radio" name="location" value="10"></td>
+                <td class="location">&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%">None of the above</td>
+                <td width="40%"><input type="radio" name="location" value="0"></td>
+                <td class="location">&nbsp;</td>
+            </tr>
+
+            <tr class="header extra_credit">
+                <td width="50%"><h5><i class="fa fa-eye" aria-hidden="true"></i> Extra credit (expertise)</h5></td>
+                <td width="40%" class="input_display"></td>
+                <td class="score_display">&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%">
+	           <span data-container='body' data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Though not explicitly defined in the document, 
+	           this probably refers to universities listed in the top 100 of prominent global rankings from bodies such as Times Higher Education and Quacquarelli Symonds (QS).">
+	           Has graduated from a high-level university</span> </td>
+                <td width="40%"><input type="checkbox" name="extra_credit"></td>
+                <td id="extra_credit">&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%">Has work experience at a Fortune 500 company</td>
+                <td width="40%"><input type="checkbox" name="extra_credit"></td>
+                <td>&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%">Possesses patents or intellectual property rights</td>
+                <td width="40%"><input type="checkbox" name="extra_credit"></td>
+                <td>&nbsp;</td>
+            </tr>
+  
+            <tr>
+                <td width="50%">Already has 5+ years of work experience in China</td>
+                <td width="40%"><input type="checkbox" name="extra_credit"></td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr class="header province">
+                <td width="50%"><h5><i class="fa fa-plus-square" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-container="body"  data-placement="bottom" data-content="You may qualify for extra credit at the discretion of the provincial department responsible for the management of foreigners. 
+                If you are not receiving extra credit or are doubtful extra credit will be assigned to you, please enter 0."></i> Extra credit (provincial)</h5></td>
+                <td width="40%" class="input_display"></td>
+                <td class="score_display">&nbsp;</td>
+            </tr>
+            
+            <tr>
+                <td width="50%">Input a number from 0-10<br />
+                <small>If you are not receiving extra credit or are doubtful extra credit will be assigned to you, please enter 0</small></td>
+                <td width="40%"><input type="text" name="province" data-container='body' data-toggle="popover" data-placement="bottom" data-trigger="manual" data-content="Please enter a whole number from 0-10."></td>
+                <td id="province" class="calcscore">&nbsp;</td>
+            </tr>
+
+    </table>
+
+
+<div class="spacer"></div>
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-striped table-bordered margin-bottom-none">
+        
+        <tr>
+            <td width="50%"><strong>Total (number of points)</strong></td>
+            <td id="points">&nbsp;</td>
+        </tr>
+  
+        <tr bgcolor="#f9f9f9">
+            <td width="50%"><strong>Result (Tier category)</strong></td>
+            <td id="tier">&nbsp;</td>
+        </tr>
+        
+        <tr style="background-color:#fcf8e3;">
+            <td colspan="2">
+                <strong><p id="tier_boundary"></p></strong> 
+                <p id="tier_description"></p></td>
+        </tr>
+    </table>
+
+<div class="spacer"></div>
+
+
+
+</div>
+
+</body>
+</html>

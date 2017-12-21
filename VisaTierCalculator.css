@@ -1,0 +1,27 @@
+.table > tbody > tr > td{
+    vertical-align: middle;
+}
+
+.spacer{
+    margin-bottom: 20px;
+}
+
+.valid{
+	background-color:#3FA729;
+	color:white;
+}
+
+.invalid{
+	background-color:#F9360F;
+	color:white;
+}
+
+.selected1{
+	background-color:#0FADE4;
+	color:white;
+}
+
+.selected2{
+	background-color:#C7BEBC;
+}
+
