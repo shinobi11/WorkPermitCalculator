@@ -1,12 +1,12 @@
-# WorkPermitCalculator
+# Work Permit Calculator
 
 Description
-===
+==
 
 This code can be included on a web page and is used to calculate the work permit tier, A, B or C, for foreigners working in China according to a points system that was introduced in 2017. The information and criteria in this calculator are in accordance with what was known in August. 
 
 How to use
-===
+==
 
 This calculator can be viewed by directly loading the html file in a web browser.
 
